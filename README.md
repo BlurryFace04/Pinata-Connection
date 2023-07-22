@@ -20,32 +20,31 @@ This application provides a wide range of features that allow users to interact 
 ### 1. File Uploading:
 Users can upload files directly to Pinata from their local system. The application provides a simple and intuitive interface for file selection and upload. Once the file is uploaded, the IPFS hash of the file is displayed, which can be used for future reference.
 
-### 2. Directory Uploading:
-In addition to individual files, users can also upload entire directories. This is particularly useful for managing large datasets or collections of files that need to be stored together.
-
-### 3. Pin by CID:
+### 2. Pin by CID:
 If users already have the Content Identifier (CID) of a file or dataset on IPFS, they can pin it directly using this feature. This is useful for ensuring the persistence of important data on the network.
 
-### 4. Pin JSON:
+### 3. Pin JSON:
 Users can pin JSON objects directly to IPFS. This is a powerful feature for developers who want to store and share structured data.
 
-### 5. Update Metadata:
+### 4. Update Metadata:
 Users can update the metadata of any pinned item. This includes the name of the pin and any key-value pairs associated with it. This feature provides flexibility in managing and organizing pinned data.
 
-### 6. Unpin:
+### 5. Unpin:
 If a user no longer needs a file or dataset to persist on IPFS, they can unpin it using this feature. When you unpin something from an IPFS storage node, it is marked for garbage collection. When garbage collection runs, the content is permanently deleted from the storage node. 
 
-### 7. Get Info:
+### 6. Get Info:
 Users can enter an IPFS hash to get detailed information about the corresponding pin by giving the ipfs_pin_hash as the input.
 
-### 8. Query Data:
+### 7. Query Data:
 Users can query the data they have pinned based on different pin status, which are all, pinned and unpinned.
 
-### 9. List by Jobs:
+### 8. List by Jobs:
 Users can list their data based on the job status of CIDs they have requested to be pinned to their account.
 
-### 10. Data Usage:
+### 9. Data Usage:
 Users can check their data usage on Pinata. This helps in keeping track of storage and understanding the distribution of data.
+
+**Note on Directory Uploading Feature:** This application includes a feature for uploading directories to Pinata, which is designed to work on a local machine where the application has access to the file system. However, please be aware that this feature may not function as expected when the application is run in a cloud-based environment (like Streamlit Sharing), due to the application's limited access to the file system in such environments. If you're running this application on your local machine, you should be able to use the "Upload Directory" feature without any issues. In the [app.py](https://github.com/BlurryFace04/Pinata-Connection/blob/main/app.py) file, this feature is commented out. If you wish to use it, you can uncomment the relevant section in the app.py file when running the application locally.
 <br><br>
 All these features are presented in an interactive and user-friendly interface, making it easy for both technical and non-technical users to leverage the power of IPFS and Pinata.
 
