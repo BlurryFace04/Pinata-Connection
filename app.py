@@ -26,12 +26,12 @@ if file_path is not None:
     st.write(upload_response)
 
     # Unpin button
-    if st.button("Unpin this file"):
+    if st.button("Unpin this file", key="unpin_file"):
         ipfs_hash = upload_response['IpfsHash']
         unpin_response = conn.unpin(ipfs_hash)
         st.write(unpin_response)
 
-# Directory uploader
+# Directory uploader: UNCOMMENT THIS SECTION IN A LOCAL SYSTEM
 # st.subheader("Upload Directory")
 # directory_path = st.text_input("Enter the absolute path of a directory")
 
@@ -41,7 +41,7 @@ if file_path is not None:
 #     st.write(upload_response)
 
 #     # Unpin button
-#     if st.button("Unpin this directory"):
+#     if st.button("Unpin this directory", key="unpin_directory"):
 #         ipfs_hash = upload_response['IpfsHash']
 #         unpin_response = conn.unpin(ipfs_hash)
 #         st.write(unpin_response)
@@ -57,7 +57,7 @@ with st.expander("Options"):
         st.write(cid_response)
 
         # Unpin button
-        if st.button("Unpin this file"):
+        if st.button("Unpin this file", key="unpin_cid"):
             ipfs_hash = cid_response['IpfsHash']
             unpin_response = conn.unpin(ipfs_hash)
             st.write(unpin_response)
@@ -75,7 +75,7 @@ with st.expander("Options"):
             st.write(json_response)
 
             # Unpin button
-            if st.button("Unpin this file"):
+            if st.button("Unpin this file", key="unpin_json"):
                 ipfs_hash = json_response['IpfsHash']
                 unpin_response = conn.unpin(ipfs_hash)
                 st.write(unpin_response)
@@ -99,7 +99,7 @@ with st.expander("Options"):
         if key and value:
             keyvalues[key] = value
 
-    if ipfs_hash_input and (name_input or keyvalues) and st.button("Update Metadata"):
+    if ipfs_hash_input and (name_input or keyvalues) and st.button("Update Metadata", key="update_metadata"):
         if keyvalues is not {}:
             update_metadata_response = conn.update_metadata(ipfs_hash_input, name_input, keyvalues)
         else:
@@ -141,7 +141,7 @@ if jobs:
 
 # Get data usage
 st.subheader("9. Data Usage")
-if st.button("Get data usage"):
+if st.button("Get data usage", key="data_usage"):
     usage_response = conn.data_usage()
     st.write(usage_response)
 
