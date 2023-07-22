@@ -117,7 +117,7 @@ if unpin_hash_input:
 st.subheader("6. Get Info")
 hash_input = st.text_input("Enter an IPFS hash to get its info")
 if hash_input:
-    hash_response = conn.query(hash_contains=hash_input, ttl=60)
+    hash_response = conn.query(hash_contains=hash_input, ttl=0)
     st.write(hash_response)
 
 # Get with a specific status
@@ -126,7 +126,7 @@ status_options = [None, "all", "pinned", "unpinned"]
 status = st.selectbox("Select pin status to query the data", status_options)
 
 if status:
-    pins_response = conn.query(status=status, ttl=60)
+    pins_response = conn.query(status=status, ttl=0)
     st.write(pins_response)
 
 # List by jobs
@@ -136,7 +136,7 @@ jobs_options = [None, "prechecking", "searching", "retrieving", "expired", "over
 jobs = st.selectbox("Select job status to list the data", jobs_options)
 
 if jobs:
-    jobs_response = conn.list_by_jobs(status=jobs, ttl=60)
+    jobs_response = conn.list_by_jobs(status=jobs, ttl=0)
     st.write(jobs_response)
 
 # Get data usage
