@@ -25,22 +25,35 @@ In addition to individual files, users can also upload entire directories. This 
 If users already have the Content Identifier (CID) of a file or dataset on IPFS, they can pin it directly using this feature. This is useful for ensuring the persistence of important data on the network.
 
 ### 4. Pin JSON:
-Users can pin JSON objects directly to IPFS. This is a powerful feature for developers and data scientists who want to store and share structured data.
+Users can pin JSON objects directly to IPFS. This is a powerful feature for developers who want to store and share structured data.
 
 ### 5. Update Metadata:
 Users can update the metadata of any pinned item. This includes the name of the pin and any key-value pairs associated with it. This feature provides flexibility in managing and organizing pinned data.
 
 ### 6. Unpin:
-If a user no longer needs a file or dataset to persist on IPFS, they can unpin it using this feature.
+If a user no longer needs a file or dataset to persist on IPFS, they can unpin it using this feature. When you unpin something from an IPFS storage node, it is marked for garbage collection. When garbage collection runs, the content is permanently deleted from the storage node. 
 
 ### 7. Get Info:
-Users can enter an IPFS hash to get detailed information about the corresponding pin. This includes the pin status, the date it was pinned, and more.
+Users can enter an IPFS hash to get detailed information about the corresponding pin by giving the ipfs_pin_hash as the input.
 
 ### 8. Query Data:
-Users can query the data they have pinned based on different parameters such as the pin status. This feature provides powerful data management capabilities.
+Users can query the data they have pinned based on different pin status, which are all, pinned and unpinned.
 
 ### 9. List by Jobs:
-Users can list their pinning jobs based on their status. This provides insights into the pinning process and helps users manage their data more effectively.
+Users can list their data based on the job status of CIDs they have requested to be pinned to their account.
 
 ### 10. Data Usage:
 Users can check their data usage on Pinata. This helps in keeping track of storage and understanding the distribution of data.
+<br><br>
+All these features are presented in an interactive and user-friendly interface, making it easy for both technical and non-technical users to leverage the power of IPFS and Pinata.
+
+# Usage
+The application is hosted on Streamlit's community cloud and can be accessed [here](https://pinata.streamlit.app/).
+
+The user interface is intuitive and easy to navigate. Each section of the application corresponds to a different feature of the Pinata API. Simply follow the prompts and enter the required information to use each feature.
+
+# Contributing
+Contributions to this project are welcome. If you have a feature request, bug report, or proposal for improvement, please open an issue on GitHub. If you want to contribute code, please fork the repository and submit a pull request.
+
+# License
+This project is licensed under the MIT License. See the [LICENSE file](https://github.com/BlurryFace04/Pinata-Connection/blob/main/LICENSE) for details.
