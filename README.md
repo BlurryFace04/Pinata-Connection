@@ -47,13 +47,13 @@ Users can check their data usage on Pinata. This helps in keeping track of stora
 <br><br>
 All these features are presented in an interactive and user-friendly interface, making it easy for both technical and non-technical users to leverage the power of IPFS and Pinata.
 
-# Usage
+## Usage
 The application is hosted on Streamlit's community cloud and can be accessed [here](https://pinata.streamlit.app/).
 
 The user interface is intuitive and easy to navigate. Each section of the application corresponds to a different feature of the Pinata API. Simply follow the prompts and enter the required information to use each feature.
 
-# Contributing
+## Contributing
 Contributions to this project are welcome. If you have a feature request, bug report, or proposal for improvement, please open an issue on GitHub. If you want to contribute code, please fork the repository and submit a pull request.
 
-# License
+## License
 This project is licensed under the MIT License. See the [LICENSE file](https://github.com/BlurryFace04/Pinata-Connection/blob/main/LICENSE) for details.
