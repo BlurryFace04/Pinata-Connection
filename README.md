@@ -1,3 +1,4 @@
+<br>
 <table border="0">
   <tr>
     <td><img src="https://www.gitbook.com/cdn-cgi/image/width=40,dpr=2,height=40,fit=contain,format=auto/https%3A%2F%2F4183870952-files.gitbook.io%2F~%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fspaces%252F-MUp92Ia17fU7ZvnMCAm%252Favatar-1624571916925.png%3Fgeneration%3D1624571917228957%26alt%3Dmedia" alt="Pinata Logo" width="80"></td>
