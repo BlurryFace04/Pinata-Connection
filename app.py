@@ -32,22 +32,22 @@ if file_path is not None:
         st.write(unpin_response)
 
 # Directory uploader
-st.subheader("2. Upload Directory")
-directory_path = st.text_input("Enter the absolute path of a directory")
+# st.subheader("Upload Directory")
+# directory_path = st.text_input("Enter the absolute path of a directory")
 
-if directory_path:
-    # Upload the directory
-    upload_response = conn.upload_directory(directory_path)
-    st.write(upload_response)
+# if directory_path:
+#     # Upload the directory
+#     upload_response = conn.upload_directory(directory_path)
+#     st.write(upload_response)
 
-    # Unpin button
-    if st.button("Unpin this directory"):
-        ipfs_hash = upload_response['IpfsHash']
-        unpin_response = conn.unpin(ipfs_hash)
-        st.write(unpin_response)
+#     # Unpin button
+#     if st.button("Unpin this directory"):
+#         ipfs_hash = upload_response['IpfsHash']
+#         unpin_response = conn.unpin(ipfs_hash)
+#         st.write(unpin_response)
 
 # Pin by CID
-st.subheader("3. Pin by CID")
+st.subheader("2. Pin by CID")
 with st.expander("Options"):
     cid_input = st.text_input("Enter a CID to pin")
     name_input = st.text_input("Enter a name for the pin")
@@ -63,7 +63,7 @@ with st.expander("Options"):
             st.write(unpin_response)
 
 # Pin JSON
-st.subheader("4. Pin JSON")
+st.subheader("3. Pin JSON")
 with st.expander("Options"):
     json_content_input = st.text_input("Enter JSON content to pin (as a JSON string)")
     json_name_input = st.text_input("Enter a name for the JSON pin")
@@ -84,7 +84,7 @@ with st.expander("Options"):
             st.error("Invalid JSON string")
 
 # Update metadata
-st.subheader("5. Update Metadata")
+st.subheader("4. Update Metadata")
 with st.expander("Options"):
     ipfs_hash_input = st.text_input("Enter an IPFS hash to update its metadata")
     name_input = st.text_input("Enter a new name for the pin")
@@ -107,21 +107,21 @@ with st.expander("Options"):
         st.write(update_metadata_response)
 
 # Unpin
-st.subheader("6. Unpin")
+st.subheader("5. Unpin")
 unpin_hash_input = st.text_input("Enter an IPFS hash to unpin")
 if unpin_hash_input:
     unpin_response = conn.unpin(unpin_hash_input)
     st.write(unpin_response)
 
 # Get with a specific hash
-st.subheader("7. Get Info")
+st.subheader("6. Get Info")
 hash_input = st.text_input("Enter an IPFS hash to get its info")
 if hash_input:
     hash_response = conn.query(hash_contains=hash_input, ttl=60)
     st.write(hash_response)
 
 # Get with a specific status
-st.subheader("8. Query Data")
+st.subheader("7. Query Data")
 status_options = [None, "all", "pinned", "unpinned"]
 status = st.selectbox("Select pin status to query the data", status_options)
 
@@ -130,7 +130,7 @@ if status:
     st.write(pins_response)
 
 # List by jobs
-st.subheader("9. List by Jobs")
+st.subheader("8. List by Jobs")
 jobs_options = [None, "prechecking", "searching", "retrieving", "expired", "over_free_limit", "over_max_size",
                 "invalid_object", "bad_host_node"]
 jobs = st.selectbox("Select job status to list the data", jobs_options)
@@ -140,7 +140,7 @@ if jobs:
     st.write(jobs_response)
 
 # Get data usage
-st.subheader("10. Data Usage")
+st.subheader("9. Data Usage")
 if st.button("Get data usage"):
     usage_response = conn.data_usage()
     st.write(usage_response)
