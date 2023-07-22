@@ -4,6 +4,7 @@
     <td><h1>Pinata Connection</h1></td>
   </tr>
 </table>
+<br>
 This project is a user-friendly Streamlit application that provides an interactive interface for interacting with the Pinata IPFS API. It was developed as part of the Streamlit Connections Hackathon. The application is designed to make it easy for users to leverage the power of the InterPlanetary File System (IPFS) through Pinata's robust API, all within the convenience of Streamlit's interactive and user-friendly framework.
 <br><br>
 InterPlanetary File System (IPFS) is a protocol and network designed to create a content-addressable, peer-to-peer method of storing and sharing hypermedia in a distributed file system. Pinata is a platform that provides user-friendly IPFS infrastructure and makes it easy to interact with the IPFS network.
