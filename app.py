@@ -17,7 +17,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 st.markdown("<br>", unsafe_allow_html=True)
 
 # File uploader
-st.subheader("1. Upload File")
+st.subheader("Upload File")
 file_path = st.file_uploader("Upload a file")
 
 if file_path is not None and st.button("Upload File", key="upload_file"):
@@ -53,7 +53,7 @@ if 'upload_response' in st.session_state:
 #         st.write(unpin_response)
 
 # Pin by CID
-st.subheader("2. Pin by CID")
+st.subheader("Pin by CID")
 with st.expander("Options"):
     cid_input = st.text_input("Enter a CID to pin")
     name_input = st.text_input("Enter a name for the pin")
@@ -72,7 +72,7 @@ if 'cid_response' in st.session_state:
         st.write(unpin_response)
 
 # Pin JSON
-st.subheader("3. Pin JSON")
+st.subheader("Pin JSON")
 with st.expander("Options"):
     json_content_input = st.text_input("Enter JSON content to pin (as a JSON string)")
     json_name_input = st.text_input("Enter a name for the JSON pin")
@@ -96,7 +96,7 @@ if 'json_response' in st.session_state:
         st.write(unpin_response)
 
 # Update metadata
-st.subheader("4. Update Metadata")
+st.subheader("Update Metadata")
 with st.expander("Options"):
     ipfs_hash_input = st.text_input("Enter an IPFS hash to update its metadata")
     name_input = st.text_input("Enter a new name for the pin")
@@ -122,7 +122,7 @@ if 'update_metadata_response' in st.session_state:
     st.write(st.session_state['update_metadata_response'])
 
 # Unpin
-st.subheader("5. Unpin")
+st.subheader("Unpin")
 unpin_hash_input = st.text_input("Enter an IPFS hash to unpin")
 if unpin_hash_input and st.button("Unpin", key="unpin"):
     unpin_response = conn.unpin(unpin_hash_input)
@@ -132,7 +132,7 @@ if 'unpin_response' in st.session_state:
     st.write(st.session_state['unpin_response'])
 
 # Get with a specific hash
-st.subheader("6. Get Info")
+st.subheader("Get Info")
 hash_input = st.text_input("Enter an IPFS hash to get its info")
 if hash_input and st.button("Get Info", key="get_info"):
     hash_response = conn.query(hash_contains=hash_input, ttl=0)
@@ -142,7 +142,7 @@ if 'hash_response' in st.session_state:
     st.write(st.session_state['hash_response'])
 
 # Get with a specific status
-st.subheader("7. Query Data")
+st.subheader("Query Data")
 status_options = [None, "all", "pinned", "unpinned"]
 status = st.selectbox("Select pin status to query the data", status_options)
 
@@ -157,7 +157,7 @@ if status is None:
     st.session_state.pop('pins_response', None)
 
 # List by jobs
-st.subheader("8. List by Jobs")
+st.subheader("List by Jobs")
 jobs_options = [None, "prechecking", "searching", "retrieving", "expired", "over_free_limit", "over_max_size",
                 "invalid_object", "bad_host_node"]
 jobs = st.selectbox("Select job status to list the data", jobs_options)
@@ -173,7 +173,7 @@ if jobs is None:
     st.session_state.pop('jobs_response', None)
 
 # Get data usage
-st.subheader("9. Data Usage")
+st.subheader("Data Usage")
 if st.button("Get data usage", key="data_usage"):
     usage_response = conn.data_usage()
     st.session_state['usage_response'] = usage_response
